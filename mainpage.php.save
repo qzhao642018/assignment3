@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Get customer info</title>
+<link rel="stylesheet" href="Q1.css">
+</head>
+<body>
+<?php
+include 'connecttodb.php';
+?>
+
+<h1>All customers</h1>
+
+<form action = "getpurchases.php" method="post">
+        <?php
+                include 'getcustomers.php';
+        ?>
+<input type="submit" value="Submit">
+</form>
+</br>
+
+<h2>All product info</h2>
+<p> Q2 get the product list</p>
+<form action = "getproduct.php" method="post">
+	<select name="order">
+		<option value="ASC">ascending</option>
+		<option value="DESC">descending</option>
+	</select>
+	<select name="type">
+		<option value="cost">price</option>
+		<option value="description">description</option>
+	</select>
+	<input type="submit" value="submit">
+</form>
+
+<h3>Insert new purchases</h3>
+<p>Q3: insert new purchase</p>
+<form action="" method="post">
+	CustomerID:<input type="text" name="cusID"><br>
+	ProductID  :<input type="text" name="prodID"><br>
+	Quantity    :<input type="text" name="Quantity"><br>
+	<input type="submit" value="submit">
+	<?php
+		if(isset($_POST['cusID'])&& isset($_POST['prodID'])&& isset($_POST['Quantity'])){
+		
+	}		
+
+	?>
+</form>
+</body>
+</html>
+
